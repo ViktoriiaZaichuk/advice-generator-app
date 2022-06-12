@@ -22,4 +22,4 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://vikazaichuk.com/)
+- Website - [Vika Zaichuk](https://vikazaichuk.com/)
