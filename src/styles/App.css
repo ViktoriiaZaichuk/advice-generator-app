@@ -36,6 +36,7 @@
 
 .advice-dice:hover {
     box-shadow: 0px 0px 1rem hsl(150, 100%, 66%);
+    cursor: pointer;
 }
 
 .advice-dice img {

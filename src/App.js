@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { getAdvice } from './api/Api';
 
 function App() {
-  const [advice, setAdvice] = useState([]);
+  const [advice, setAdvice] = useState({});
 
   useEffect(() => {
     async function getRandomAdvice() {
@@ -22,17 +22,22 @@ function App() {
   getRandomAdvice();
   }, []);
 
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return ( 
     <div>
       <div className="card-container">
         {/* CARD DYNAMIC STUFF */}
-        <div className="advice-nr">ADVICE #{JSON.stringify(advice.id)}</div>
-        <div className="advice-txt">{JSON.stringify(advice.advice)}</div>
+        <div className="advice-nr">ADVICE #{advice.id}</div>
+        <div className="advice-txt">{advice.advice}</div>
         
-        <div><img src={PatternDivider} alt=""/></div>
+        <div><img src={PatternDivider} alt="Pattern Divider"/></div>
 
         {/* DICE */}
-        <div className='advice-dice'><img src={Dice} alt=""/></div>
+        <div className='advice-dice' onClick={refreshPage}><img src={Dice} alt="Dice"/></div>
 
       </div>
 
