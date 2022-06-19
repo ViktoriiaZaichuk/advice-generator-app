@@ -6,22 +6,17 @@ import { useEffect, useState } from 'react';
 import { getAdvice } from './api/Api';
 
 function App() {
-  const [advice, setAdvice] = useState({});
+  const [advice, setAdvice] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    async function getRandomAdvice() {
-      try {
-        const adivceData = await getAdvice();
-        setAdvice(adivceData.slip);
-        console.log(adivceData.slip.id);
-    } catch (error) {
-        console.error(error);
-    }
-  }
-
-  getRandomAdvice();
+    getAdvice()
+      .then((data) => {
+          setAdvice(data.slip);
+          setIsLoaded(true);
+          console.log(data.slip)
+      });
   }, []);
-
 
   function refreshPage() {
     window.location.reload(false);
@@ -30,8 +25,8 @@ function App() {
   return ( 
     <div>
       <div className="card-container">
-        <div className="advice-nr">ADVICE #{advice.id}</div>
-        <div className="advice-txt">{advice.advice}</div>
+        <div className="advice-nr">ADVICE #{advice && advice.id}</div>
+        <div className="advice-txt">{advice && advice.advice}</div>
         
         <div><img src={PatternDivider} alt="Pattern Divider"/></div>
 
