@@ -30,13 +30,11 @@ function App() {
   return ( 
     <div>
       <div className="card-container">
-        {/* CARD DYNAMIC STUFF */}
         <div className="advice-nr">ADVICE #{advice.id}</div>
         <div className="advice-txt">{advice.advice}</div>
         
         <div><img src={PatternDivider} alt="Pattern Divider"/></div>
 
-        {/* DICE */}
         <div className='advice-dice' onClick={refreshPage}><img src={Dice} alt="Dice"/></div>
 
       </div>
