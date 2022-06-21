@@ -19,7 +19,8 @@ Users should be able to:
 - [React](https://reactjs.org/)
 - [Advice Slip JSON API](https://api.adviceslip.com/)
 
-
+### Screenshot
+![](./src/screenshot/advice-app.JPG)
 
 ## Author
 
