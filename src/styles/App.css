@@ -3,17 +3,27 @@
     min-width: 320px;
     max-width: 500px;
     background-color: hsl(217, 19%, 24%);
-    padding: 6rem;
+    padding: 4rem 4rem 6rem 4rem;
     margin: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 1rem;
     position: relative;
+    animation: 2s ease-out 0s 1 cardAnimation;
 }
 
 .card-container > * {
     padding: 1rem 0;
+}
+
+@keyframes cardAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .advice-nr {
@@ -51,6 +61,22 @@
 .advice-dice img {
     display: inline-block;
 }
+.advice-dice img:active {
+    animation: 1s ease-out 0s diceAnimation;
+}
+@keyframes diceAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.img-pattern {
+    width: 100%;
+    height: auto;
+}
 
 
 /* ATTRIBUTION */
@@ -59,7 +85,22 @@
     text-align: center; 
     position: absolute;
     bottom: 3rem;
+    left: 50%;
+    top: 90%;
+    transform: translateX(-50%);
+    color: hsl(193, 38%, 86%); 
 }
 .attribution a { 
-    color: hsl(228, 45%, 44%); 
+    color: hsl(150, 100%, 66%); 
+}
+
+
+
+@media screen and (min-width: 375px)
+{
+    .card-container {
+        min-width: auto;
+        padding: 4rem 4rem 6rem 4rem;
+        margin: 2rem;
+    }
 }
